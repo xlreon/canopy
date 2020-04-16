@@ -1,6 +1,12 @@
 import React from "react";
+import { setTableData } from "../Actions";
+import { connect } from "react-redux";
 
 class HoldingsTable extends React.Component {
+  componentWillMount() {
+    this.props.setTableData();
+  }
+
   render() {
     return (
       <div className="card">
@@ -12,4 +18,4 @@ class HoldingsTable extends React.Component {
   }
 }
 
-export default HoldingsTable;
+export default connect(null, { setTableData })(HoldingsTable);

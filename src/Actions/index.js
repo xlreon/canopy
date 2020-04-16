@@ -1,4 +1,4 @@
-import { getChartData } from "../Services";
+import { getChartData, getTableData } from "../Services";
 import moment from "moment";
 
 const AppActions = {
@@ -31,4 +31,9 @@ const setChartData = () => (dispatch) =>
         });
   });
 
-export { AppActions, setChartData };
+const setTableData = () => (disptach) =>
+  getTableData.then((data) => {
+    console.log(data);
+  });
+
+export { AppActions, setChartData, setTableData };
