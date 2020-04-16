@@ -5,7 +5,7 @@ class Header extends React.Component {
     return (
       <div className="card">
         <div className="card-content">
-          <p className="title">Welcome, you can choose now.</p>
+          <p className="title">Welcome</p>
         </div>
       </div>
     );

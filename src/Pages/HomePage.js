@@ -21,10 +21,7 @@ class HomePage extends React.Component {
       2: <HoldingsTable />,
     }[currentTab]);
 
-  setCurrentTab = (tabNumber) => {
-    console.log(tabNumber);
-    this.setState({ currentTab: tabNumber });
-  };
+  setCurrentTab = (tabNumber) => this.setState({ currentTab: tabNumber });
 
   render() {
     const { currentTab } = this.state;
