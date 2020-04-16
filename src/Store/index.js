@@ -4,6 +4,7 @@ import reducers from "../Reducers";
 
 const initialState = {
   netWorthChartData: null,
+  holdingsData: null,
 };
 
 let store = createStore(reducers, applyMiddleware(thunk));

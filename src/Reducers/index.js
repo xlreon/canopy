@@ -8,6 +8,10 @@ function reducer(state = initialState, action) {
       return { ...state, netWorthChartData: payload };
     case AppActions.FAILED_NETWORTH_DATA:
       return { ...state, netWorthChartError: payload };
+    case AppActions.GET_HOLDINGS_DATA:
+      return { ...state, holdingsData: payload };
+    case AppActions.FAILED_HOLDINGS_DATA:
+      return { ...state, holdingsError: payload };
     default:
       return state;
   }
