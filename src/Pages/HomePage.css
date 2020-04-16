@@ -1,5 +1,13 @@
 .container {
   display: grid;
-  grid-template-rows: 1fr 1fr;
-  grid-row-gap: 5vh;
+  grid-template-rows: 12vh 1fr;
+  padding: 2vw;
+}
+
+.nav {
+  background-image: linear-gradient(
+    to right bottom,
+    rgba(111, 213, 211, 0.8),
+    rgba(40, 171, 180, 0.8)
+  );
 }

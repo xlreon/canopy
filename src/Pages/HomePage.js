@@ -1,10 +1,5 @@
 import React from "react";
-import {
-  Header,
-  TabSwitch,
-  HoldingsTable,
-  NetWorthChart,
-} from "../Components/";
+import { TabSwitch, HoldingsTable, NetWorthChart } from "../Components/";
 import "./HomePage.css";
 
 class HomePage extends React.Component {
@@ -27,8 +22,12 @@ class HomePage extends React.Component {
     const { currentTab } = this.state;
     return (
       <div className="container">
-        <Header />
-        <TabSwitch setCurrentTab={this.setCurrentTab} currentTab={currentTab} />
+        <div className="nav">
+          <TabSwitch
+            setCurrentTab={this.setCurrentTab}
+            currentTab={currentTab}
+          />
+        </div>
         {this._getTabView(currentTab)}
       </div>
     );

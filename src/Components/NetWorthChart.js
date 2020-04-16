@@ -60,7 +60,7 @@ class NetWorthChart extends React.Component {
         <div className="card-content">
           <div
             className="networth"
-            style={{ width: "100%", height: "500px" }}
+            style={{ width: "100%", height: "70vh" }}
           ></div>
         </div>
       </div>
