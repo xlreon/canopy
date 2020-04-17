@@ -6,6 +6,7 @@ const AppActions = {
   FAILED_NETWORTH_DATA: "FAILED_NETWORTH_DATA",
   GET_HOLDINGS_DATA: "GET_HOLDINGS_DATA:",
   FAILED_HOLDINGS_DATA: "FAILED_HOLDINGS_DATA",
+  HOLDING_TABLE_CREATE: "HOLDING_TABLE_CREATE",
 };
 
 const _transformData = (data) => {
@@ -34,16 +35,11 @@ const setChartData = () => (dispatch) =>
   });
 
 const setTableData = () => (dispatch) =>
-  getTableData.then((data) => {
-    typeof data === "object"
-      ? dispatch({
-          type: AppActions.GET_HOLDINGS_DATA,
-          payload: data.payload,
-        })
-      : dispatch({
-          type: AppActions.FAILED_HOLDINGS_DATA,
-          payload: data,
-        });
-  });
+  getTableData.then(({ payload }) =>
+    dispatch({
+      type: AppActions.HOLDING_TABLE_CREATE,
+      payload: payload,
+    })
+  );
 
 export { AppActions, setChartData, setTableData };
