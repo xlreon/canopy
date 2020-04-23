@@ -29,8 +29,6 @@ class NetWorthChart extends React.Component {
   }
 
   generateChart = (netWorthChartData) => {
-    // am4core.useTheme(am4themes_animated);
-    // am4core.useTheme(am4themes_kelly);
     this.chart = am4core.create("networth", am4charts.XYChart);
     this.chart.data = netWorthChartData ? netWorthChartData : [];
     let categoryAxis = this.chart.xAxes.push(new am4charts.CategoryAxis());
@@ -68,8 +66,12 @@ class NetWorthChart extends React.Component {
   }
 }
 
-const mapStateToProps = (state) => ({
-  netWorthChartData: state.netWorthChartData,
-});
+const mapStateToProps = (state) => {
+  const { reducer } = state;
+  const { netWorthChartData } = reducer;
+  return {
+    netWorthChartData,
+  };
+};
 
 export default connect(mapStateToProps, { setChartData })(NetWorthChart);
