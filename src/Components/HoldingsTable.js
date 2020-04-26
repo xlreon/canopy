@@ -30,7 +30,7 @@ class HoldingsTable extends React.Component {
     const checkData = !_.isEmpty(this.props.holdingsData);
     return (
       <div className="card">
-        <div className="card-content">
+        <div className="card-body">
           <table style={{ height: "100%" }}>
             {checkData && this._generateTableHeaders()}
             {checkData && this._generateTable(holdingsData)}

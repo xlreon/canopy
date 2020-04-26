@@ -4,22 +4,27 @@ class TabSwitch extends React.Component {
   render() {
     const { setCurrentTab, currentTab } = this.props;
     return (
-      <div className="tabs is-medium">
-        <ul>
-          <li
-            className={currentTab === 1 && "is-active"}
-            onClick={() => setCurrentTab(1)}
+      <ul
+        className="nav nav-pills nav-pills-primary nav-pills-icons"
+        role="tablist"
+      >
+        <li className="nav-item" onClick={() => setCurrentTab(1)}>
+          <a
+            className={"nav-link" + (currentTab === 1 ? " active" : "")}
+            role="tablist"
           >
-            <a>NetWorth Chart</a>
-          </li>
-          <li
-            className={currentTab === 2 && "is-active"}
-            onClick={() => setCurrentTab(2)}
+            <i className="tim-icons icon-chart-bar-32"></i> NetWorth Chart
+          </a>
+        </li>
+        <li className="nav-item" onClick={() => setCurrentTab(2)}>
+          <a
+            className={"nav-link" + (currentTab === 2 ? " active" : "")}
+            role="tablist"
           >
-            <a>Holdings Table</a>
-          </li>
-        </ul>
-      </div>
+            <i className="tim-icons icon-bullet-list-67"></i> Holdings Table
+          </a>
+        </li>
+      </ul>
     );
   }
 }

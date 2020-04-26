@@ -40,13 +40,13 @@ class NetWorthChart extends React.Component {
     let series = this.chart.series.push(new am4charts.ColumnSeries());
 
     series.name = "Traded On";
-    series.columns.template.fill = am4core.color("#104547");
+    series.columns.template.fill = am4core.color("cyan");
     series.dataFields.valueY = "net_worth";
     series.dataFields.categoryX = "traded_on";
 
     let series2 = this.chart.series.push(new am4charts.LineSeries());
     series2.name = "Net Worth";
-    series2.stroke = am4core.color("#CDA2AB");
+    // series2.stroke = am4core.color("white");
     series2.strokeWidth = 1;
     series2.dataFields.valueY = "net_worth";
     series2.dataFields.categoryX = "traded_on";
@@ -55,7 +55,7 @@ class NetWorthChart extends React.Component {
   render() {
     return (
       <div className="card">
-        <div className="card-content">
+        <div className="card-body">
           <div
             className="networth"
             style={{ width: "100%", height: "70vh" }}
